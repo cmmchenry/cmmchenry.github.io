@@ -1,0 +1,34 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="cm-web-page">
+      <template>
+        <style>
+        </style>
+        <div>{{greeting}}!</div>
+      </template>
+
+      <script>
+        class cmWebPage extends Polymer.Element {
+
+          static get is() { return 'cm-web-page'; }
+
+          static get properties() {
+            return {
+              greeting: {
+                type: String,
+                value: "Hello World"
+              }
+            }
+          }
+          
+          greetMe() {
+            console.log(this.greeting);
+          }
+
+        }
+
+        // Register the x-custom element with the browser
+        customElements.define(cmWebPage.is, cmWebPage);
+      </script>
+
+    </dom-module>
