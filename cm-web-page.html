@@ -1,34 +1,66 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
+<link rel=import" href="bower_components/neon-animation/neon-animated-pages.html">
+<link rel=import" href="bower_components/neon-animation/neon-animatable.html">
+
+<link rel="import" href="cm-tool-bar.html">
+<link rel="import" href="cm-home-page.html">
+<link rel="import" href="cm-about-page.html">
+<link rel="import" href="cm-contact-page.html">
+<link rel="import" href="cm-events-page.html">
+
 <dom-module id="cm-web-page">
-      <template>
+	<template>
         <style>
-        </style>
-        <div>{{greeting}}</div>
-      </template>
-
-      <script>
-        class cmWebPage extends Polymer.Element {
-
-          static get is() { return 'cm-web-page'; }
-
-          static get properties() {
-            return {
-              greeting: {
-                type: String,
-                value: "Hello World123"
-              }
-            }
-          }
-          
-          greetMe() {
-            console.log(this.greeting);
-          }
-
+        :host{
+        	display: block;
+        	height: 100%;
+        	width: 100%;
         }
+        
+        neon-animated-pages{
+        	height: calc(100% - 100px);
+        	width: 100%;
+        }
+        
+        neon-animatable{
+        	height: 100%;
+        	width: 100%;
+        }
+        
+        </style>
+        <cm-tool-bar page-number="{{pageNumber}}"></cm-tool-bar>
+		<neon-animated-pages selected="0">
+			<neon-animatable>
+				<cm-home-page></cm-home-page>
+			</neon-animatable>
+			<neon-animatable>
+				<cm-about-page></cm-acout-page>
+			</neon-animatable>
+			<neon-animatable>
+				<cm-contact-page></cm-contact-page>
+			</neon-animatable>
+			<neon-animatable>
+				<cm-events-page></cm-events-page>
+			</neon-animatable>
+		</neon-animated-pages>
+	</template>
 
-        // Register the x-custom element with the browser
+	<script>
+		class cmWebPage extends Polymer.Element {
+
+			static get is() { return 'cm-web-page'; }
+
+			static get properties() {
+         		return {
+					pageNumber: {
+						type: Number,
+						value: 0
+					}	
+				}
+			}
+		}
         customElements.define(cmWebPage.is, cmWebPage);
       </script>
 
-    </dom-module>
+</dom-module>

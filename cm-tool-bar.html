@@ -1,0 +1,74 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="cm-tool-bar">
+      <template>
+        <style>
+			.box{
+				height: 100px;
+				width: 100%;
+				min-width: 1440px;
+				background: #353535;
+				display: flex;
+			}
+
+			h1{
+				font-family: 'Roboto', sans-serif;
+				font-weight: normal;
+				margin: 0;
+				padding: 31px 18px;
+				color: white;
+			}
+
+			.gap {
+				flex:1;
+			}
+
+			.tabs {
+				padding: 63px 24px 0 0;
+			}
+
+			.tab{
+				float: left;
+				font-size: 18px;
+				font-family: 'Roboto', sans-serif;
+				padding: 8px 24px;
+				color: white;
+				cursor: pointer;
+				transition: background 0.2s ease;
+				border-radius: 2px;
+			}
+
+			.tab:hover{
+				background: #0061ff
+			}
+
+        </style>
+        <div class="box">
+			<h1>Glen Oaks church of Christ</h1>
+			<div class="gap"></div>
+			<div class="tabs" selected={{pageNumber}}>
+				<div class="tab">Home</div>
+				<div class="tab">About Us</div>
+				<div class="tab">Contact Us</div>
+				<div class="tab">Events</div>
+			</div>
+		</div>
+      </template>
+
+      <script>
+        class cmToolBar extends Polymer.Element {
+
+		      static get is() { return 'cm-tool-bar'; }
+
+		      static get properties() {
+		        	return {
+		         		pageNumber: {
+		            		type: Number,
+							notify: true
+		          		}
+		        	}
+		      }
+        }
+        customElements.define(cmToolBar.is, cmToolBar);
+      </script>
+</dom-module>

@@ -1,0 +1,32 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="cm-events-page">
+	<template>
+        <style>
+        </style>
+		<div>
+			Events
+			<br><br>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut est placerat, rutrum dui nec, elementum magna. Vestibulum sodales ornare libero, nec pretium purus semper eget. Donec non lorem consectetur, condimentum felis eget, tempus orci. Mauris condimentum dapibus sollicitudin. Donec dui turpis, accumsan id lacus non, tincidunt volutpat erat. Curabitur pharetra, leo et dictum gravida, leo nulla tristique tortor, eget porttitor neque est at ante. Praesent tristique maximus massa, in gravida mauris eleifend eu. Morbi vel augue sed erat placerat lobortis. Quisque sed nunc vel erat pharetra tincidunt. Nullam bibendum quam lacus, id porta ante sollicitudin ut. Quisque ultricies, dolor nec blandit posuere, ipsum elit laoreet nunc, ut auctor augue lectus et turpis. Aenean sit amet nisi sem. Donec ac congue elit. Curabitur eu euismod dolor, ut bibendum ex.
+			</p>
+		</div>
+	</template>
+	<script>
+		class cmEventsPage extends Polymer.Element {
+
+			static get is() { return 'cm-events-page'; }
+
+			static get properties() {
+         		return {
+					pageNumber: {
+						type: Number,
+						value: 0
+					}	
+				}
+			}
+		}
+        customElements.define(cmEventsPage.is, cmEventsPage);
+      </script>
+
+</dom-module>
