@@ -1,0 +1,16 @@
+body{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+h1{
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	color:red;
+}
+
+h2{
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;	
+}

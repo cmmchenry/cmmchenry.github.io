@@ -1,0 +1,44 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="cm-about-page">
+	<template>
+        <style>
+	:host{
+		display: block;
+	}
+
+	.container{
+		padding: 0 24px;
+	}
+	
+	h1{
+		font-family: 'Roboto', sans-serif;
+		font-weight: normal;
+		margin: 0px;
+	}
+
+        </style>
+
+	<div class="container">
+		<h1>About Us</h1>
+	</div>
+
+	</template>
+	<script>
+		class cmAboutPage extends Polymer.Element {
+
+			static get is() { return 'cm-about-page'; }
+
+			static get properties() {
+         		return {
+					pageNumber: {
+						type: Number,
+						value: 0
+					}	
+				}
+			}
+		}
+        customElements.define(cmAboutPage.is, cmAboutPage);
+      </script>
+
+</dom-module>

@@ -1,0 +1,112 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="cm-home-page">
+	<template>
+        <style>
+
+	:host{
+		display: block;
+	}
+
+	.page {
+	
+	}
+
+	.container{
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		-ms-flex-direction: row;
+        	-webkit-flex-direction: row;
+        	flex-direction: row;
+		display: -ms-flexbox;
+        	display: -webkit-flex;
+       		display: flex;
+	}
+
+	h1{
+		font-family: 'Roboto', sans-serif;
+		font-weight: normal;
+		margin: 0px;
+	}
+
+	
+	h3 {
+		font-family: 'Roboto', sans-serif;
+		font-weight: normal;
+		margin: 0px;
+	}
+
+	.left {
+		-ms-flex-direction: column;
+        	-webkit-flex-direction: column;
+        	flex-direction: column;
+		display: -ms-flexbox;
+        	display: -webkit-flex;
+       		display: flex;
+	}
+
+	.right{ 
+		-ms-flex-direction: column;
+        	-webkit-flex-direction: column;
+        	flex-direction: column;
+		display: -ms-flexbox;
+        	display: -webkit-flex;
+       		display: flex;
+	}	
+	
+	.picture {
+		height: 200px;
+		width: 200px;
+		border-radius:100px;
+		background-color: #2176ff;
+	}
+	
+	.times {
+		
+	}
+        </style>
+	
+	<div class="container">
+		<div class="left">
+			<div class="picture">
+				
+			</div>
+			<div class="times">
+				<h3>Sunday</h3>
+				<span>Bible Class: 9:30 am</span>
+				<span>Worship: 10:30 am</span>
+				<h3>Wednesday</h3>
+				<span>Bible Class: 7:00 pm</span>
+			</div>
+		</div>
+		<div class="right">
+			<h1>About Us</h1>
+			<div class="about_us">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis purus ut cursus malesuada. Suspendisse vitae consequat dolor, vel ullamcorper est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque ipsum lorem, rutrum volutpat placerat nec, posuere ac dolor. Mauris aliquet velit vitae nisi pulvinar, at egestas ipsum consectetur. Praesent consectetur, erat vel ullamcorper lacinia, metus enim vehicula lorem, quis cursus lorem lacus non metus. Vestibulum vulputate lacinia condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec finibus elementum nisi, quis porttitor mauris. Aliquam efficitur nunc vel sodales convallis. Aliquam eget purus id ante condimentum ornare nec non mi.</p>
+			</div>
+			<div class="standings">
+				
+			</div>
+		</div>
+	</div>
+
+	</template>
+	<script>
+		class cmHomePage extends Polymer.Element {
+
+			static get is() { return 'cm-home-page'; }
+
+			static get properties() {
+         		return {
+					pageNumber: {
+						type: Number,
+						value: 0
+					}	
+				}
+			}
+		}
+        customElements.define(cmHomePage.is, cmHomePage);
+      </script>
+
+</dom-module>

@@ -1,0 +1,43 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<link rel="import" href="bower_components/google-map/google-map.html">
+<link rel="import" href="bower_components/google-map/google-map-marker.html">
+
+
+<dom-module id="cm-contact-page">
+	<template>
+	<style>
+	:host{
+		display: block;
+	}
+
+	.container{
+		padding: 0 24px;
+	}
+	
+	h1{
+		font-family: 'Roboto', sans-serif;
+		font-weight: normal;
+		margin: 0px;
+	}
+
+        </style>
+
+	<div class="container">
+		<h1>Contact Us</h1>
+	</div>
+
+	</template>
+	<script>
+		class cmContactPage extends Polymer.Element {
+
+			static get is() { return 'cm-contact-page'; }
+
+			static get properties() {
+         		return {}
+			}
+		}
+        customElements.define(cmContactPage.is, cmContactPage);
+      </script>
+
+</dom-module>

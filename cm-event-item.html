@@ -1,0 +1,120 @@
+<dom-module id="cm-event-item">
+	<template>
+		<style>
+			:host{
+				display: block;
+				font-family: 'Roboto', sans-serif;
+			}
+			
+			h2{
+				font-family: 'Roboto', sans-serif;
+				font-weight: normal;
+				margin: 0;
+				padding: 10px;
+			}
+			
+			.box{
+				margin-bottom: 18px;
+				min-width: 430px;
+				border: 1px solid #353535;
+				border-radius: 4px;
+				-moz-box-shadow:    3px 3px 5px 6px #bbb;
+				-webkit-box-shadow: 3px 3px 5px 6px #bbb;
+				box-shadow:         3px 3px 5px 6px #bbb;
+			}
+			
+			.title{
+				background: #353535;
+				color: white;
+				height: 48px;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+			
+			.container{
+				padding: 12px 24px;
+				background: white;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+			}
+			
+			
+			.leftColumn{
+				vertical-align:text-top;
+				min-width: 120px;
+			}
+			
+			.rightColumn{
+				vertical-align:text-top;
+				color: #777;
+			}
+
+			table{
+				border-collapse: collapse;
+				width: 100%;
+			}
+			
+			tr{
+				height:48px;
+				font-size: 18px;
+				line-height: 1.5;
+				border-bottom: 1px solid #777;
+			}
+			
+		</style>
+		<div class="box">
+			<div class="title">
+				<h2>{{event.title}}</h2>
+			</div>
+			<div class="container">
+				<table>
+					<tr>
+						<td class="leftColumn"><span>Speaker: </span></td>
+						<td class="rightColumn">{{event.speaker}}</td>
+					</tr>
+					<tr>
+						<td class="leftColumn">Location: </td>
+						<td class="rightColumn">
+							<div>{{event.addressLineOne}}</div>
+							<div>{{event.addressLineTwo}}</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="leftColumn">Date: </td>
+						<td class="rightColumn">{{event.date}}</td>
+					</tr>
+					<tr>
+						<td class="leftColumn">Times:</td>
+						<td class="rightColumn">
+							<template is="dom-repeat" items={{event.times}}>
+								<div class="time"><span>{{displayTime(item)}}</span><div>
+							</template>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</template>
+	
+	<script>
+	class cmEventItem extends Polymer.Element {
+
+	static get is() { return 'cm-event-item'; }
+
+	static get properties() {
+		return {
+			event: {
+				type: Object
+			}
+		}
+	}
+		displayTime(time) {
+			return time[0] + ": " + time[1];
+		}
+
+	}
+
+	customElements.define(cmEventItem.is, cmEventItem);
+	</script>
+
+</dom-module>

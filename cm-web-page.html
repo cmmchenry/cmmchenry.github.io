@@ -1,34 +1,88 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
+<link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="bower_components/neon-animation/neon-animatable.html">
+
+<link rel="import" href="cm-tool-bar.html">
+<link rel="import" href="cm-home-page.html">
+<link rel="import" href="cm-about-page.html">
+<link rel="import" href="cm-contact-page.html">
+<link rel="import" href="cm-events-page.html">
+
 <dom-module id="cm-web-page">
-      <template>
+	<template>
         <style>
-        </style>
-        <div>{{greeting}}</div>
-      </template>
-
-      <script>
-        class cmWebPage extends Polymer.Element {
-
-          static get is() { return 'cm-web-page'; }
-
-          static get properties() {
-            return {
-              greeting: {
-                type: String,
-                value: "Hello World123"
-              }
-            }
-          }
-          
-          greetMe() {
-            console.log(this.greeting);
-          }
-
+        :host{
+        	display: block;
+        	height: 100%;
+        	width: 100%;
+		/*background: #f1f1f1;*/
         }
 
-        // Register the x-custom element with the browser
+	.gap{
+		height: 75px;
+		width: 100%;
+	}
+        
+        .page{
+        	height: calc(100% - 75px);
+        	width: 100%;
+		background: white; /* For browsers that do not support gradients */
+    		background: -webkit-linear-gradient(white, #f9f9f9); /* For Safari 5.1 to 6.0 */
+    		background: -o-linear-gradient(white, #f9f9f9); /* For Opera 11.1 to 12.0 */
+   		background: -moz-linear-gradient(white, #f9f9f9); /* For Firefox 3.6 to 15 */
+   		background: linear-gradient(white, #f9f9f9); /* Standard syntax */
+        }
+        
+	.invisible{
+		display: none;
+	}
+
+        </style>
+        <cm-tool-bar on-tab-selected="_handlePageSwap"></cm-tool-bar>
+	<cm-home-page id="home" class="page"></cm-home-page>
+	<cm-about-page id="about" class="page invisible"></cm-about-page>
+	<cm-contact-page id="contact" class="page invisible"></cm-contact-page>
+	<cm-events-page id="events" class="page invisible"></cm-events-page>
+	</template>
+
+	<script>
+		class cmWebPage extends Polymer.Element {
+
+			static get is() { return 'cm-web-page'; }
+
+			static get properties() {
+         		return {}	
+			}
+			
+			_handlePageSwap(e) {
+				if(e.detail == "home"){
+					this.$.home.classList.remove("invisible");
+					this.$.about.classList.add("invisible");
+					this.$.contact.classList.add("invisible");
+					this.$.events.classList.add("invisible");
+				}
+				else if(e.detail == "about"){
+					this.$.home.classList.add("invisible");
+					this.$.about.classList.remove("invisible");
+					this.$.contact.classList.add("invisible");
+					this.$.events.classList.add("invisible");
+				}
+				else if(e.detail == "contact"){
+					this.$.home.classList.add("invisible");
+					this.$.about.classList.add("invisible");
+					this.$.contact.classList.remove("invisible");
+					this.$.events.classList.add("invisible");
+				}
+				else{
+					this.$.home.classList.add("invisible");
+					this.$.about.classList.add("invisible");
+					this.$.contact.classList.add("invisible");
+					this.$.events.classList.remove("invisible");
+				};
+			}
+		}
         customElements.define(cmWebPage.is, cmWebPage);
       </script>
 
-    </dom-module>
+</dom-module>

@@ -1,0 +1,121 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="stylesheet" type="text/css" href="theme.css">
+
+<dom-module id="cm-tool-bar">
+      <template>
+        <style>
+		host: {
+			display: block;
+		}
+		
+		.box{
+			height: 70px;
+			width: 100%;
+			/*background: #353535;*/
+			background: white;
+			display: flex;
+			box-shadow: rgba(0, 0, 0, 0.11) 0px 2.5px 5px 0px;
+		}
+
+		h1{
+			font-family: 'Roboto', sans-serif;
+			font-weight: normal;
+			margin: 0;
+			padding: 18px 18px;
+			color: black;
+		}
+
+		.gap {
+			flex:1;
+		}
+
+		.tabs {
+			padding: 33px 24px 0 0;
+		}
+
+		.tab{
+			float: left;
+			font-size: 18px;
+			font-family: 'Roboto', sans-serif;
+			padding: 8px 24px;
+			color: black;
+			background-color: transparent;
+			cursor: pointer;
+			transition: background 0.2s ease;
+			transition: color 0.2s ease;
+			border-top-left-radius: 2px;
+			border-top-right-radius: 2px;
+		}
+
+		.tab:hover{
+			color: #2176ff;
+			background-color: white;
+		}
+		
+		.active{
+			background: #e6e6e6;
+			color: #353535;
+		}
+
+		.active.tab:hover{
+			color: #2176ff;
+			background-color: #e6e6e6;
+		}
+
+        </style>
+        <div class="box">
+		<h1>Glen Oaks church of Christ</h1>
+		<div class="gap"></div>
+		<div class="tabs">
+			<div id="home" class="tab active" on-click="_handleHome">Home</div>
+			<div id="about" class="tab" on-click="_handleAbout">About Us</div>
+			<div id="contact" class="tab" on-click="_handleContact">Contact Us</div>
+			<div id="events" class="tab" on-click="_handleEvents">Events</div>
+		</div>
+	</div>
+	<div style="background: transparent; height:5px"></div>
+	</template>
+
+      	<script>
+        class cmToolBar extends Polymer.Element {
+
+		      static get is() { return 'cm-tool-bar'; }
+
+		      static get properties() {
+		        	return {}
+		      }
+			_handleHome() {
+				this.$.home.classList.add("active");
+				this.$.about.classList.remove("active");
+				this.$.contact.classList.remove("active");
+				this.$.events.classList.remove("active");
+				this.dispatchEvent(new CustomEvent('tab-selected', {detail:"home"}));
+			}
+			
+			_handleAbout() {
+				this.$.home.classList.remove("active");
+				this.$.about.classList.add("active");
+				this.$.contact.classList.remove("active");
+				this.$.events.classList.remove("active");
+				this.dispatchEvent(new CustomEvent('tab-selected', {detail:"about"}));
+			}
+			
+			_handleContact() {
+				this.$.home.classList.remove("active");
+				this.$.about.classList.remove("active");
+				this.$.contact.classList.add("active");
+				this.$.events.classList.remove("active");
+				this.dispatchEvent(new CustomEvent('tab-selected', {detail:"contact"}));
+			}
+			
+			_handleEvents() {
+				this.$.home.classList.remove("active");
+				this.$.about.classList.remove("active");
+				this.$.contact.classList.remove("active");
+				this.$.events.classList.add("active");
+				this.dispatchEvent(new CustomEvent('tab-selected', {detail:"events"}));
+			}
+        }
+        customElements.define(cmToolBar.is, cmToolBar);
+      </script>
+</dom-module>
