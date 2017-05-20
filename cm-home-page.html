@@ -64,8 +64,16 @@
                 height: 200px;
                 width: 200px;
                 border-radius:100px;
-                background-color: #2176ff;
-                background-image: url("Images/building.jpg");
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden
+            }
+            
+            .picture img {
+                flex-shrink: 0;
+                min-width: 100%;
+                min-height: 100%
             }
 
             .times {
@@ -88,7 +96,7 @@
 	<div class="container">
 		<div class="left">
 			<div class="picture">
-				
+				<img src="Images/building.jpg" alt"IMAGE"/>
 			</div>
 			<div class="times">
 				<h2>Sunday</h2>
