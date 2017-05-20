@@ -1,5 +1,6 @@
 {
   "name": "polymer",
+  "version": "2.0.0-rc.2",
   "main": [
     "polymer.html"
   ],
@@ -20,11 +21,11 @@
     "url": "https://github.com/Polymer/polymer.git"
   },
   "dependencies": {
-    "shadycss": "webcomponents/shadycss#^v1.0.0",
-    "webcomponentsjs": "^v1.0.0"
+    "shadycss": "webcomponents/shadycss#v1.0.0-rc.1",
+    "webcomponentsjs": "v1.0.0-rc.5"
   },
   "devDependencies": {
-    "web-component-tester": "^v6.0.0-prerelease.10",
+    "web-component-tester": "^5",
     "test-fixture": "PolymerElements/test-fixture#3.0.0-rc.1"
   },
   "private": true,
@@ -32,15 +33,13 @@
     "test-fixture": "3.0.0-rc.1"
   },
   "homepage": "https://github.com/Polymer/polymer",
-  "version": "2.0.0-rc.9",
-  "_release": "2.0.0-rc.9",
+  "_release": "2.0.0-rc.2",
   "_resolution": {
     "type": "version",
-    "tag": "v2.0.0-rc.9",
-    "commit": "99abf955021d44d6ab5beab44b5b26a180986e23"
+    "tag": "v2.0.0-rc.2",
+    "commit": "d46694e5d555144c3ca06ac536b901d02d06321e"
   },
   "_source": "https://github.com/Polymer/polymer.git",
-  "_target": "^2.0.0-rc.3",
-  "_originalSource": "Polymer/polymer",
-  "_direct": true
+  "_target": "2.0.0-rc.2",
+  "_originalSource": "Polymer/polymer"
 }

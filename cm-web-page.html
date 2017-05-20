@@ -1,8 +1,5 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
-<link rel="import" href="bower_components/neon-animation/neon-animatable.html">
-
 <link rel="import" href="cm-tool-bar.html">
 <link rel="import" href="cm-home-page.html">
 <link rel="import" href="cm-about-page.html">
@@ -12,38 +9,38 @@
 <dom-module id="cm-web-page">
 	<template>
         <style>
-        :host{
-        	display: block;
-        	height: 100%;
-        	width: 100%;
-		/*background: #f1f1f1;*/
-        }
+            
+            :host{
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
 
-	.gap{
-		height: 75px;
-		width: 100%;
-	}
-        
-        .page{
-        	height: calc(100% - 75px);
-        	width: 100%;
-		background: white; /* For browsers that do not support gradients */
-    		background: -webkit-linear-gradient(white, #f9f9f9); /* For Safari 5.1 to 6.0 */
-    		background: -o-linear-gradient(white, #f9f9f9); /* For Opera 11.1 to 12.0 */
-   		background: -moz-linear-gradient(white, #f9f9f9); /* For Firefox 3.6 to 15 */
-   		background: linear-gradient(white, #f9f9f9); /* Standard syntax */
-        }
-        
-	.invisible{
-		display: none;
-	}
+            .gap{
+                height: 75px;
+                width: 100%;
+            }
+
+            .page{
+                height: calc(100% - 75px);
+                width: 100%;
+                background: white; /* For browsers that do not support gradients */
+                background: -webkit-linear-gradient(white, #f9f9f9); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(white, #f9f9f9); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(white, #f9f9f9); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(white, #f9f9f9); /* Standard syntax */
+            }
+
+            .invisible{
+                display: none;
+            }
 
         </style>
         <cm-tool-bar on-tab-selected="_handlePageSwap"></cm-tool-bar>
-	<cm-home-page id="home" class="page"></cm-home-page>
-	<cm-about-page id="about" class="page invisible"></cm-about-page>
-	<cm-contact-page id="contact" class="page invisible"></cm-contact-page>
-	<cm-events-page id="events" class="page invisible"></cm-events-page>
+        <cm-home-page id="home" class="page"></cm-home-page>
+        <cm-about-page id="about" class="page invisible"></cm-about-page>
+        <cm-contact-page id="contact" class="page invisible"></cm-contact-page>
+        <cm-events-page id="events" class="page invisible"></cm-events-page>
 	</template>
 
 	<script>
